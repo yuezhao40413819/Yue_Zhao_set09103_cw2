@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Log in</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <label for="id_username"><font color="white">Username</label>
+        <input type="text" name="username" id="id_username" placeholder="Enter your user name"><br>
+        <label for="id_password"><font color="white">Password</label>
+        <input type="password" name="password" id="id_password" placeholder="Enter password"><br>
+        <button type="submit">Log in</button>
+        {% if message %}
+        <p style="color:red">{{ message }}</p>
+        {% endif %}
+    </form>
+</body>
+</html>

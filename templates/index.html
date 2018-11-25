@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Don't Starve{% endblock %}
+{% block navli %}
+    <ul class="nav navbar-nav navbar-right">
+        {% if session.is_login %}
+            <li><a href="/">Hello！{{ session.name }}. Now you can go to the main page</a></li>
+            <li><a href="/logout">Log out</a><li>
+            {% else %}
+            <li><a href="/">Hello！</a></li>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Register</a></li>
+        {% endif %}
+    </ul>
+{% endblock navli %}
+{% block content %}
+    <div class="container text-center">
+        {% if session.is_login %}
+            <h1>{{ session.name }}Welcome back！</h1>
+        {% else %}
+            <h1>Please log in first！</h1>
+        {% endif %}
+    </div>
+{% endblock %}
